@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function operation(a, b, c){
-  if( c == null || c == undefined ){
+  if( c === undefined ){
     return 'Preencha todos os valores corretamente!';
   }
   return (a * b * c) + 2
@@ -71,16 +71,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function calculation(x, y, z){
-  if((x !== null && x !== undefined) && (y == null || x == undefined)  && (z == null || z == undefined)){
+  if ( x !== undefined && y === undefined && z === undefined ){
     return x;
-  }
-  if((x !== null && x !== undefined )&& (y !== null && x !== undefined)&& (z == null || z == undefined)){
+  }else if ( x !== undefined && y !== undefined && z === undefined ){
     return x + y;
-  }
-  if((x !== null && x !== undefined)&&(y !== null && x !== undefined)&& (z !== null && z !== undefined)){
-    return (x + y) / z;
-  }
-  if((x == null || x == undefined)&&(y == null || x == undefined)&& (z == null || z == undefined)){
+  }else if ( x !== undefined && y !== undefined && z !== undefined ){
+    return ( x + y) / z;
+  }else if ( x === undefined && y === undefined && z === undefined ){
     return false;
   }else{
     return null;
